@@ -11,12 +11,12 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
         header {
-            background-color: #333;
+            background-color: #5f6368;
             color: white;
             padding: 15px 20px;
             text-align: center;
@@ -27,15 +27,44 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1), -4px 0 8px rgba(0,0,0,0.05), 4px 0 8px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #5f6368;
+            border-bottom: 2px solid #5f6368;
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        ul {
+            line-height: 1.6;
+        }
+        .note {
+            background: #f5f5f5;
+            padding: 15px;
+            border-left: 4px solid #5f6368;
+            margin: 15px 0;
+            border-radius: 4px;
         }
         a {
-            color: #007BFF;
+            color: #5f6368;
             text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #5f6368;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -43,39 +72,59 @@
     <header>
         <h1>Terms of Service</h1>
     </header>
-    <main style="font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; line-height: 1.6;">
-        <h1>Terms of Service</h1>
     
-        <h2>1. Acceptance of Terms</h2>
-        <p>
-            By using Quick Meeting Links by acoola72 ("the application"), you agree to these terms. If you do not agree with any part of these terms, please do not use the application.
-        </p>
-    
-        <h2>2. Description of Services</h2>
-        <p>
-            Quick Meeting Links provides tools for generating Google Meet links and managing events in Google Calendar. The application is not affiliated with Google and uses Google APIs under the terms of their respective licenses.
-        </p>
-    
-        <h2>3. User Data</h2>
-        <p>
-            The application accesses user data (e.g., calendar events) via Google APIs to perform its functionality. All data is processed locally in the user's browser and is not stored on external servers. For more details, please refer to our <a href="/privacy.html">Privacy Policy</a>.
-        </p>
-    
-        <h2>4. Limitation of Liability</h2>
-        <p>
-            The application is provided "as is" without any warranties, express or implied. We are not liable for any damages or losses resulting from the use of the application, including issues related to Google APIs or user data.
-        </p>
-    
-        <h2>5. Changes to These Terms</h2>
-        <p>
-            We may update these terms from time to time. Continued use of the application after any updates constitutes acceptance of the revised terms.
-        </p>
-    
-        <h2>6. Contact Us</h2>
-        <p>
-            If you have any questions about these Terms of Service, please contact us at:  
-            <a href="mailto:acoola72tmn@yandex.ru">acoola72tmn@yandex.ru</a>
-        </p>
+    <main>
+        <section>
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+                By using Quick Meeting Links by acoola72 ("the application"), you agree to these terms. 
+                If you do not agree with any part of these terms, please do not use the application.
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Description of Services</h2>
+            <p>
+                Quick Meeting Links provides tools for generating Google Meet links and managing events in Google Calendar. 
+                The application is not affiliated with Google and uses Google APIs under the terms of their respective licenses.
+            </p>
+        </section>
+
+        <section>
+            <h2>3. User Data</h2>
+            <div class="note">
+                <p>
+                    The application accesses user data (e.g., calendar events) via Google APIs to perform its functionality. 
+                    All data is processed locally in the user's browser and is not stored on external servers. 
+                    For more details, please refer to our <a href="/privacy.html">Privacy Policy</a>.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Limitation of Liability</h2>
+            <p>
+                The application is provided "as is" without any warranties, express or implied. 
+                We are not liable for any damages or losses resulting from the use of the application, 
+                including issues related to Google APIs or user data.
+            </p>
+        </section>
+
+        <section>
+            <h2>5. Changes to These Terms</h2>
+            <p>
+                We may update these terms from time to time. 
+                Continued use of the application after any updates constitutes acceptance of the revised terms.
+            </p>
+        </section>
+
+        <section>
+            <h2>6. Contact Us</h2>
+            <p>
+                If you have any questions about these Terms of Service, please contact us at:  
+                <a href="mailto:acoola72tmn@yandex.ru">acoola72tmn@yandex.ru</a>
+            </p>
+        </section>
     </main>    
     <footer>
         &copy; 2024 Andrey Kulakov. All rights reserved.

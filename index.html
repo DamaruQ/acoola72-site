@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrey Kulakov - Official Website</title>
+    <title>Andrey Kulakov - Personal Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,48 +11,179 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #0F9D58;
             color: white;
             padding: 15px 20px;
             text-align: center;
         }
         main {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
-            text-align: center;
+            flex: 1;
+        }
+        section {
+            margin-bottom: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0F9D58;
+            border-bottom: 2px solid #0F9D58;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .note {
+            background: #e6f4ef;
+            padding: 15px;
+            border-left: 4px solid #0F9D58;
+            margin: 15px 0;
+            border-radius: 4px;
         }
         footer {
-            background-color: #4CAF50;
+            background-color: #0F9D58;
             color: white;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 15px;
             text-align: center;
+            margin-top: auto;
         }
         a {
-            color: #4CAF50;
+            color: #0F9D58;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0b7942;
+            text-decoration: underline;
+        }
+        .project-link {
+            display: inline-block;
+            background: #0F9D58;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        .project-link:hover {
+            background-color: #0b7942;
+            color: white;
+            text-decoration: none;
+        }
+        .intro-block {
+            text-align: center;
+        }
+        .projects-block {
+            text-align: center;
+        }
+        .footer-links {
+            margin-top: 10px;
+        }
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .personal-intro {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .personal-intro h2 {
+            font-size: 2em;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .personal-intro p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        .project-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1), -4px 0 8px rgba(0,0,0,0.05), 4px 0 8px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .project-card h3 {
+            color: #0F9D58;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Andrey Kulakov</h1>
-        <p>Developer of the Quick Meeting Links</p>
+        <p>Developer of Quick Meeting Links</p>
     </header>
+    
     <main>
-        <p>Welcome to my official website!</p>
-        <p>Learn more about my projects, including the <a href="/qml-extension.html">Quck Meeting Links</a>.</p>
+        <section class="personal-intro">
+            <h2>Hi, I'm Andrey!</h2>
+            <p>
+                I'm passionate about finding simple solutions to everyday challenges. 
+                While I'm not a professional programmer, I enjoy creating tools that make life a bit easier.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <div class="project-card">
+                <h3>Quick Meeting Links</h3>
+                <p class="project-description">
+                    I created this Chrome extension to solve a common problem I faced: 
+                    the need for quick and efficient Google Meet link generation. 
+                    It's a simple tool that might help others who face the same challenge.
+                </p>
+                <a href="/qml-extension.html" class="project-link">Learn more about the extension</a>
+            </div>
+            <!-- 
+            new project card here
+            --> 
+        </section>
+
+        <section class="note" style="max-width: 600px; margin: 40px auto; text-align: center;">
+            <p>
+                More content coming soon! 👋
+            </p>
+        </section>
     </main>
-    <footer style="background-color: #4CAF50; color: white; text-align: center; padding: 10px;">
-        &copy; 2024 Andrey Kulakov. All rights reserved.
-        <p>
-            <a href="/privacy.html" style="color: #333; text-decoration: none;">Privacy Policy</a> | 
-            <a href="/terms.html" style="color: #333; text-decoration: none;">Terms of Service</a>
-        </p>
+
+    <footer>
+        <div>&copy; 2024 Andrey Kulakov. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a> | 
+            <a href="/terms.html">Terms of Service</a>
+        </div>
     </footer>
 </body>
 </html>

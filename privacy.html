@@ -11,12 +11,12 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
         header {
-            background-color: #333;
+            background-color: #5f6368;
             color: white;
             padding: 15px 20px;
             text-align: center;
@@ -27,15 +27,44 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1), -4px 0 8px rgba(0,0,0,0.05), 4px 0 8px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #5f6368;
+            border-bottom: 2px solid #5f6368;
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        ul {
+            line-height: 1.6;
+        }
+        .note {
+            background: #f5f5f5;
+            padding: 15px;
+            border-left: 4px solid #5f6368;
+            margin: 15px 0;
+            border-radius: 4px;
         }
         a {
-            color: #007BFF;
+            color: #5f6368;
             text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #5f6368;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -43,54 +72,66 @@
     <header>
         <h1>Privacy Policy</h1>
     </header>
-    <main style="font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; line-height: 1.6;">
-        <h1>Privacy Policy</h1>
     
-        <p>
-            Welcome to Quick Meeting Links by acoola72 ("we", "our", or "the application"). This privacy policy explains how we access, use, and protect your data when using our service.
-        </p>
-    
-        <h2>Google User Data We Access</h2>
-        <p>
-            Quick Meeting Links by acoola72 uses the following Google APIs to provide its functionality:
-        </p>
-        <ul>
-            <li><strong>Google Calendar API</strong>: To view, create, and update calendar events on behalf of the user.</li>
-            <li><strong>Google Calendar Events API</strong>: To access event details such as time, title, and participants for modifying or creating events.</li>
-        </ul>
-        <p>
-            We do not collect or store any personal information, calendar data, or other Google user data on external servers. All data is processed locally in your browser and remains under your control.
-        </p>
-    
-        <h2>Data Protection Mechanisms</h2>
-        <p>
-            We ensure the security of your data through the following mechanisms:
-        </p>
-        <ul>
-            <li><strong>OAuth 2.0 Authentication</strong>: Your data is accessed only with your explicit consent via Google's secure OAuth authentication.</li>
-            <li><strong>Local Data Processing</strong>: All data is processed locally in your browser; no data is transmitted to external servers or third parties.</li>
-            <li><strong>Minimal Permissions</strong>: The application only requests the minimum permissions necessary to perform its intended functionality (view and manage calendar events).</li>
-        </ul>
-    
-        <h2>Data Retention</h2>
-        <p>
-            Quick Meeting Links does not retain any Google user data after the session ends. Your data is only accessed temporarily during active use of the application.
-        </p>
-    
-        <h2>Changes to This Policy</h2>
-        <p>
-            We may update this Privacy Policy to reflect changes in our practices. All updates will be published on this page with a new effective date.
-        </p>
-    
-        <h2>Contact Us</h2>
-        <p>
-            If you have any questions or concerns about this Privacy Policy, please contact us at:
-        </p>
-        <p>
-            <a href="mailto:acoola72tmn@yandex.ru">acoola72tmn@yandex.ru</a>
-        </p>
+    <main>
+        <section>
+            <p>
+                Welcome to Quick Meeting Links by acoola72 ("we", "our", or "the application"). 
+                This privacy policy explains how we access, use, and protect your data when using our service.
+            </p>
+        </section>
+
+        <section>
+            <h2>Google User Data We Access</h2>
+            <p>
+                Quick Meeting Links by acoola72 uses the following Google APIs to provide its functionality:
+            </p>
+            <ul>
+                <li><strong>Google Calendar API:</strong> To view, create, and update calendar events on behalf of the user.</li>
+                <li><strong>Google Calendar Events API:</strong> To access event details such as time, title, and participants for modifying or creating events.</li>
+            </ul>
+            <div class="note">
+                <p>
+                    We do not collect or store any personal information, calendar data, or other Google user data on external servers. 
+                    All data is processed locally in your browser and remains under your control.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Data Protection Mechanisms</h2>
+            <ul>
+                <li><strong>OAuth 2.0 Authentication:</strong> Your data is accessed only with your explicit consent via Google's secure OAuth authentication.</li>
+                <li><strong>Local Data Processing:</strong> All data is processed locally in your browser; no data is transmitted to external servers or third parties.</li>
+                <li><strong>Minimal Permissions:</strong> The application only requests the minimum permissions necessary to perform its intended functionality.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Data Retention</h2>
+            <p>
+                Quick Meeting Links does not retain any Google user data after the session ends. 
+                Your data is only accessed temporarily during active use of the application.
+            </p>
+        </section>
+
+        <section>
+            <h2>Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy to reflect changes in our practices. 
+                All updates will be published on this page with a new effective date.
+            </p>
+        </section>
+
+        <section>
+            <h2>Contact Us</h2>
+            <p>
+                If you have any questions or concerns about this Privacy Policy, please contact us at:
+                <a href="mailto:acoola72tmn@yandex.ru">acoola72tmn@yandex.ru</a>
+            </p>
+        </section>
     </main>
-    
+
     <footer>
         &copy; 2024 Andrey Kulakov. All rights reserved.
     </footer>
