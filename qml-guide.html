@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Meeting Links - Complete Guide</title>
     <style>
+        html, body {
+            overflow-x: hidden;
+            position: relative;
+            width: 100%;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         header {
             background-color: #DB4437;
@@ -22,13 +30,17 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
         section {
-            margin-bottom: 30px;
             background: white;
             padding: 20px;
+            margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1), -4px 0 8px rgba(0,0,0,0.05), 4px 0 8px rgba(0,0,0,0.05);
+            width: 100%;
+            box-sizing: border-box;
         }
         h2 {
             color: #DB4437;
