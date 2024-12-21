@@ -63,6 +63,7 @@
             padding: 15px;
             border-left: 4px solid #DB4437;
             margin: 15px 0;
+            border-radius: 8px;
         }
         footer {
             background-color: #DB4437;
@@ -228,6 +229,242 @@
             
             .template-example {
                 grid-template-columns: 1fr;
+            }
+        }
+        /* Добавляем стили для новых табов */
+        #duo-tab1:checked ~ .template-examples .template-example:nth-of-type(1),
+        #duo-tab2:checked ~ .template-examples .template-example:nth-of-type(2) {
+            display: grid;
+        }
+
+        #duo-tab1:checked ~ .tabs-header label[for="duo-tab1"],
+        #duo-tab2:checked ~ .tabs-header label[for="duo-tab2"] {
+            background: #DB4437;
+            color: white;
+        }
+
+        .duo-mode-example {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .calendar-examples {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .calendar-examples {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .duo-mode-content {
+            display: grid;
+            grid-template-columns: minmax(300px, 30%) 1fr;
+            gap: 20px;
+        }
+
+        .use-case {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .calendar-section {
+            grid-row: 1;
+            grid-column: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .note {
+            margin: 0;
+            height: auto;
+        }
+
+        .template-block, 
+        .result-block {
+            height: auto;
+            align-self: start;
+        }
+
+        .code-block {
+            white-space: pre-wrap;
+            word-break: break-word;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .duo-mode-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .calendar-section {
+                grid-column: 1;
+                grid-row: 2;
+            }
+        }
+
+        .duo-mode-examples {
+            margin: 20px 0;
+        }
+
+        .calendar-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .calendar-block {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .calendar-block h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .code-block {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e1e4e8;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        .code-block.result {
+            background: #ffeae9;
+            color: #DB4437;
+        }
+
+        @media (max-width: 768px) {
+            .duo-mode-example,
+            .calendar-pair {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Добавляем стили для контейнера заметок */
+        .notes-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        @media (max-width: 768px) {
+            .notes-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Стили для заметок */
+        .notes-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        /* Стили для табов */
+        .template-tabs {
+            margin-top: 20px;
+        }
+
+        .tabs-header {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .tabs-header label {
+            cursor: pointer;
+            padding: 10px 20px;
+            border: 1px solid #DB4437;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #DB4437;
+            flex: 1;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        /* ��тили для календарей */
+        .calendar-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .calendar-block {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .calendar-block h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .code-block {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e1e4e8;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        .code-block.result {
+            background: #ffeae9;
+            color: #DB4437;
+        }
+
+        /* Активные табы */
+        #duo-tab1:checked ~ .template-examples .template-example:nth-of-type(1),
+        #duo-tab2:checked ~ .template-examples .template-example:nth-of-type(2) {
+            display: block;
+        }
+
+        #duo-tab1:checked ~ .tabs-header label[for="duo-tab1"],
+        #duo-tab2:checked ~ .tabs-header label[for="duo-tab2"] {
+            background: #DB4437;
+            color: white;
+        }
+
+        /* Медиа-запросы */
+        @media (max-width: 768px) {
+            .notes-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .calendar-pair {
+                grid-template-columns: 1fr;
+            }
+            
+            .tabs-header {
+                flex-wrap: wrap;
+            }
+            
+            .tabs-header label {
+                flex: 1 1 calc(50% - 10px);
             }
         }
     </style>
@@ -452,11 +689,100 @@ See you there! 👋</div>
             </div>
 
             <h3>Duo Mode Settings</h3>
-            <p>Configure two calendars:</p>
-            <ul>
-                <li> <strong>Primary Calendar:</strong> Where the actual meeting events are created</li>
-                <li> <strong>Secondary Calendar:</strong> Where meeting links and details are stored for easy access</li>
-            </ul>
+            <p>In Duo Mode, meetings are synchronized between two calendars. This is especially useful when working with shared calendars.</p>
+
+            <div class="notes-container">
+                <div class="note">
+                    <p><strong>Common Use Case:</strong></p>
+                    <ul>
+                        <li>You create meetings in a shared calendar (like "Hidden Meetings")</li>
+                        <li>The Meet link is stored in your Hidden Meetings calendar</li>
+                        <li>A copy appears in your team's calendar for visibility</li>
+                        <li>You maintain host privileges through the Hidden Meetings calendar</li>
+                    </ul>
+                </div>
+
+                <div class="note">
+                    <p><strong>Department Use Case:</strong></p>
+                    <ul>
+                        <li>Executive assistants storing meetings in their Hidden Meetings calendar</li>
+                        <li>Meeting details are displayed in the department calendar</li>
+                        <li>Assistant maintains host access through Hidden Meetings</li>
+                        <li>Perfect for managing multiple calendars while maintaining meeting control</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="template-tabs">
+                <input type="radio" id="duo-tab1" name="duo-template-tab" checked>
+                <input type="radio" id="duo-tab2" name="duo-template-tab">
+                
+                <div class="tabs-header">
+                    <label for="duo-tab1">Team Calendar Example</label>
+                    <label for="duo-tab2">Department Calendar Example</label>
+                </div>
+
+                <div class="template-examples">
+                    <!-- Tab 1: Team Calendar Example -->
+                    <div class="template-example">
+                        <div class="calendar-pair">
+                            <div class="calendar-block">
+                                <h4>Hidden Meetings (Primary):</h4>
+                                <div class="code-block">Title: Marketing Team Sync
+Time: 10:00 - 11:00
+Meet Link: meet.google.com/abc-def-ghi
+Description: Team sync meeting for Q1 planning
+Access: Private to you</div>
+                            </div>
+
+                            <div class="calendar-block">
+                                <h4>Marketing Team Calendar (Secondary):</h4>
+                                <div class="code-block result">Title: Marketing Team Sync
+Time: 10:00 - 11:00
+Meet Link: No link
+Description: Team sync meeting for Q1 planning
+meet.google.com/abc-def-ghi
+Visibility: Public to team
+Attendees: marketing-team@company.com</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Department Calendar Example -->
+                    <div class="template-example">
+                        <div class="calendar-pair">
+                            <div class="calendar-block">
+                                <h4>Hidden Meetings (Primary):</h4>
+                                <div class="code-block">Title: Client Meeting
+Time: 14:00 - 15:00
+Meet Link: meet.google.com/xyz-uvw-rst
+Description: Client meeting for Q1 review
+Access: Private to assistant</div>
+                            </div>
+
+                            <div class="calendar-block">
+                                <h4>Department Calendar (Secondary):</h4>
+                                <div class="code-block result">Title: Client Meeting
+Time: 14:00 - 15:00
+Meet Link: No link
+Description: Client meeting for Q1 review
+meet.google.com/xyz-uvw-rst
+Visibility: Public to department
+Attendees: team@our-company.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note">
+                <p><strong>Important:</strong></p>
+                <ul>
+                    <li>You can only sync between two calendars at a time</li>
+                    <li>Additional participants need to be invited manually after event creation</li>
+                    <li>Perfect for maintaining host access while sharing with one team/department</li>
+                </ul>
+            </div>
 
             <h3>Settings Management</h3>
             <ul>
