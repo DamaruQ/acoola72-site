@@ -41,6 +41,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1), -4px 0 8px rgba(0,0,0,0.05), 4px 0 8px rgba(0,0,0,0.05);
             width: 100%;
             box-sizing: border-box;
+            overflow: hidden;
         }
         h2 {
             color: #DB4437;
@@ -71,6 +72,163 @@
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+        .code-variables {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .variables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+        }
+        .variable-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .variable-item code {
+            background: #ffeae9;
+            color: #DB4437;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-family: 'Courier New', monospace;
+            display: inline-block;
+        }
+        .variable-item span {
+            font-size: 0.9em;
+            color: #5f6368;
+        }
+        @media (max-width: 768px) {
+            .variables-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .variables-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .template-example {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+            .template-example {
+                grid-template-columns: 1fr;
+            }
+            
+            .variable-item {
+                flex-wrap: wrap;
+            }
+            
+            .variable-item code {
+                min-width: auto;
+                margin-bottom: 4px;
+            }
+        }
+        .template-block, .result-block {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .code-block {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e1e4e8;
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            width: 100%;
+            box-sizing: border-box;
+            word-break: break-word;
+        }
+        .code-block.result {
+            background: #ffeae9;
+            color: #DB4437;
+        }
+        h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #5f6368;
+        }
+        .template-tabs {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .template-tabs input[type="radio"] {
+            display: none;
+        }
+        .tabs-header {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        .tabs-header label {
+            cursor: pointer;
+            padding: 10px 20px;
+            border: 1px solid #DB4437;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #DB4437;
+            flex: 1;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .template-examples .template-example {
+            display: none;
+            width: 100%;
+        }
+        .template-example {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+        /* Show active tab */
+        #tab1:checked ~ .template-examples .template-example:nth-of-type(1),
+        #tab2:checked ~ .template-examples .template-example:nth-of-type(2),
+        #tab3:checked ~ .template-examples .template-example:nth-of-type(3),
+        #tab4:checked ~ .template-examples .template-example:nth-of-type(4) {
+            display: grid;
+        }
+        /* Active tab style */
+        #tab1:checked ~ .tabs-header label[for="tab1"],
+        #tab2:checked ~ .tabs-header label[for="tab2"],
+        #tab3:checked ~ .tabs-header label[for="tab3"],
+        #tab4:checked ~ .tabs-header label[for="tab4"] {
+            background: #DB4437;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .tabs-header {
+                flex-wrap: wrap;
+            }
+            
+            .tabs-header label {
+                flex: 1 1 calc(50% - 10px);
+            }
+            
+            .template-example {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -157,29 +315,141 @@
 
             <h3>Message Templates</h3>
             <p>Customize how meeting information is formatted using variables:</p>
-            <ul>
-                <li><code style="color: #000000; font-weight: bold; padding: 3px; border-radius: 3px;">{link}</code> - The Meet link</li>
-                <li><code style="color: #000000; font-weight: bold; padding: 3px; border-radius: 3px;">{meeting_title}</code> - Meeting name</li>
-                <li><code style="color: #000000; font-weight: bold; padding: 3px; border-radius: 3px;">{start_date}</code> - Meeting date</li>
-                <li><code style="color: #000000; font-weight: bold; padding: 3px; border-radius: 3px;">{start_time}</code> - Start time</li>
-                <li><code style="color: #000000; font-weight: bold; padding: 3px; border-radius: 3px;">{end_time}</code> - End time</li>
-            </ul>
             
-            <p>Example template:</p>
-            <code style="color: #000000; font-weight: bold; padding: 3px; border-radius: 3px;">
-                <li>Meeting: {meeting_title}<br></li>   
-                <li>Link: {link}<br></li>
-                <li>Date: {start_date}<br></li>
-                <li>Time: {start_time} - {end_time}<br></li>
-            </code>
+            <div class="code-variables">
+                <div class="variables-grid">
+                    <div class="variable-item">
+                        <code>{link}</code>
+                        <span>The Meet link</span>
+                    </div>
+                    <div class="variable-item">
+                        <code>{meeting_title}</code>
+                        <span>Meeting name</span>
+                    </div>
+                    <div class="variable-item">
+                        <code>{start_date}</code>
+                        <span>Meeting date</span>
+                    </div>
+                    <div class="variable-item">
+                        <code>{end_date}</code>
+                        <span>End date</span>
+                    </div>
+                    <div class="variable-item">
+                        <code>{start_time}</code>
+                        <span>Start time</span>
+                    </div>
+                    <div class="variable-item">
+                        <code>{end_time}</code>
+                        <span>End time</span>
+                    </div>
+                    <div class="variable-item">
+                        <code>{calendar_name}</code>
+                        <span>Calendar name</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="template-tabs">
+                <input type="radio" id="tab1" name="template-tab" checked>
+                <input type="radio" id="tab2" name="template-tab">
+                <input type="radio" id="tab3" name="template-tab">
+                <input type="radio" id="tab4" name="template-tab">
+                
+                <div class="tabs-header">
+                    <label for="tab1">Full Template</label>
+                    <label for="tab2">Simple Template</label>
+                    <label for="tab3">Compact Template</label>
+                    <label for="tab4">Meeting Message</label>
+                </div>
 
-            <p><strong>Result of the message template:</strong></p>
-            <ul>
-                <li>Meeting: Meeting Title<br></li>   
-                <li>Link: https://meet.google.com/abc-def-ghi<br></li>
-                <li>Date: 2024-01-01<br></li>
-                <li>Time: 10:00 - 11:00<br></li>    
-            </ul>
+                <div class="template-examples">
+                    <!-- Tab 1: Full Template -->
+                    <div class="template-example">
+                        <div class="template-block">
+                            <h4>Example template:</h4>
+                            <div class="code-block">📅 Calendar: {calendar_name}
+
+🗓️ Meeting: {meeting_title}
+📍 Link: {link}
+
+📆 Date: {start_date} - {end_date}
+⏰ Time: {start_time} - {end_time}</div>
+                        </div>
+
+                        <div class="result-block">
+                            <h4>Result:</h4>
+                            <div class="code-block result">📅 Calendar: Team Calendar
+
+🗓️ Meeting: Team Sync
+📍 Link: meet.google.com/abc-def-ghi
+
+📆 Date: 2024-01-01 - 2024-01-01
+⏰ Time: 10:00 - 11:00</div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Simple Template -->
+                    <div class="template-example">
+                        <div class="template-block">
+                            <h4>Example template:</h4>
+                            <div class="code-block">Meeting: {meeting_title}
+Link: {link}
+Time: {start_time} - {end_time}</div>
+                        </div>
+
+                        <div class="result-block">
+                            <h4>Result:</h4>
+                            <div class="code-block result">Meeting: Team Sync
+Link: meet.google.com/abc-def-ghi
+Time: 10:00 - 11:00</div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Compact Template -->
+                    <div class="template-example">
+                        <div class="template-block">
+                            <h4>Example template:</h4>
+                            <div class="code-block">🔗 {link}
+📅 {start_date} {start_time}</div>
+                        </div>
+
+                        <div class="result-block">
+                            <h4>Result:</h4>
+                            <div class="code-block result">🔗 meet.google.com/abc-def-ghi
+📅 2024-01-01 10:00</div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Meeting Message -->
+                    <div class="template-example">
+                        <div class="template-block">
+                            <h4>Example template:</h4>
+                            <div class="code-block">Hello everyone!
+
+I'd like to invite you to the "{meeting_title}" meeting today at {start_time}.
+
+📍 Meeting link: {link}
+
+The meeting is scheduled to end at {end_time}. The event will be added to {calendar_name}.
+
+See you there! 👋</div>
+                        </div>
+
+                        <div class="result-block">
+                            <h4>Result:</h4>
+                            <div class="code-block result">Hello everyone!
+
+I'd like to invite you to the "Team Sync" meeting today at 10:00.
+
+📍 Meeting link: meet.google.com/abc-def-ghi
+
+The meeting is scheduled to end at 11:00. The event will be added to Team Calendar.
+
+See you there! 👋</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h3>Duo Mode Settings</h3>
             <p>Configure two calendars:</p>

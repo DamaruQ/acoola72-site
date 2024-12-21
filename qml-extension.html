@@ -104,6 +104,61 @@
         .additional-info .note {
             margin-bottom: 30px;
         }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-list li:hover {
+            background: #e8f0fe;
+        }
+
+        .contact-list a {
+            margin-left: 10px;
+            color: #4285F4;
+            text-decoration: none;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+
+        .additional-info {
+            margin-bottom: 40px;
+        }
+
+        .additional-info .note {
+            margin-bottom: 30px;
+        }
+
+        .links-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .links-container a {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .links-container a:hover {
+            background: #e8f0fe;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -136,6 +191,23 @@
                 </ul>
             </div>
         </section>
+        
+        <section class="features-block">
+            <div class="feature-list">
+                <h2>Contacts</h2>
+                <p>If you need to reach me about the extension or have any questions, feel free to contact me:</p>
+                <ul class="contact-list">
+                    <li>
+                        <strong>Email:</strong> 
+                        <a href="mailto:acoola72tmn@yandex.ru">acoola72tmn@yandex.ru</a>
+                    </li>
+                    <li>
+                        <strong>Telegram:</strong> 
+                        <a href="https://t.me/acoola72" target="_blank">@acoola72</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
         <section class="additional-info">
             <div class="note">
@@ -144,12 +216,10 @@
                 </p>
             </div>
 
-            <h2>Learn More</h2>
-            <p>
-                Please review the following links for more details:<br>
+            <div class="links-container">
                 <a href="/privacy.html">Privacy Policy</a> | 
                 <a href="/terms.html">Terms of Service</a>
-            </p>
+            </div>
         </section>
     </main>    
     <footer>
