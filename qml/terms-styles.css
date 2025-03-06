@@ -16,7 +16,7 @@ header {
     text-align: center;
 }
 
-main {
+main { 
     flex: 1;
     padding: 20px;
     max-width: 800px;

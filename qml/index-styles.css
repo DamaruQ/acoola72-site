@@ -7,7 +7,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
+} 
 
 header {
     background-color: #0F9D58;
