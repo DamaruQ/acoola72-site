@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Known Issues - Quick Meeting Links</title>
+    <link rel="stylesheet" href="qml-issues-styles.css">
+</head>
+<body>
+    <header>
+        <h1>Known Issues</h1>
+    </header>
+    <main>
+        <section>
+            <h2>1. Duo Mode Hidden Calendar Issue</h2>
+            <div class="note">
+                <p>In Duo mode, the Hidden Calendar may not display initially. To resolve this:</p>
+                <ol>
+                    <li>Create a link in No Entry mode first.</li>
+                    <li>Reload the browser.</li>
+                    <li>Insert the existing calendars into both fields (even if Hidden Meetings is not among them).</li>
+                    <li>Save the Duo settings.</li>
+                </ol>
+                <p>After saving, the Hidden Calendar should now be visible.</p>
+                <p><strong>IF IT DIDN'T HELP:</strong></p>
+                <ol>
+                    <li>Try logging out of the extension by clicking <code>logout</code>.</li>
+                    <li>Then, on the page <a href="chrome://extensions" target="_blank">chrome://extensions</a>, click the "Refresh" button.</li>
+                    <li>Check the Duo settings again.</li>
+                    <li>If nothing works, feel free to contact me on Telegram: <a href="https://t.me/acoola72" target="_blank" style="font-weight: bold;">@acoola72</a>.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Duo Template Link Duplication</h2>
+            <div class="note">
+                <p>In the Duo template settings, parameters may duplicate, and the preview will not be visible until the user types a character in another block. This is not critical, as the input in the Duo link template will still be saved when the button is pressed.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Access Issues After Logout</h2>
+            <div class="note">
+                <p>If you encounter issues after logging out of the extension, such as lost access or inability to retrieve calendars, try the following:</p>
+                <ol>
+                    <li>Open the <a href="chrome://extensions" target="_blank">chrome://extensions</a>,</li>
+                    <li>Go to the Quick Meeting Links > Debug page.</li>
+                    <li>Find caption "Service Workers" and click on them.</li>
+                    <li>Execute <code>logout()</code> in the console to force a logout.</li>
+                </ol>
+                <p>This should help you regain access to the extension.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Andrey Kulakov. All rights reserved.
+    </footer>
+</body>
+</html>
