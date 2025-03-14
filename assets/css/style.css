@@ -1722,8 +1722,18 @@ textarea.form-input::-webkit-resizer { display: none; }
   /* service */
 
   .service-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-list:has(> :nth-child(2)) {
     grid-template-columns: 1fr 1fr;
     gap: 20px 25px;
+  }
+
+  .service-list:has(> :only-child) {
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   /* testimonials */
